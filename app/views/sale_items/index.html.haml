@@ -1,0 +1,18 @@
+%h1 Welcome to my Garage Sale
+%h4 Feel free to browse my items and purchase when you're ready.
+
+%ul
+	-@sale_items.each do |si|
+		%li= "Item Name: #{si.name}"
+		%li= "Made In: #{si.year_made}"
+		%li= "Price: #{si.price}"
+		%li= "Description: #{si.description}"
+		%li= "Cool Factor: #{si.cool_factor}"
+		%button
+			=link_to "Delete", "/sale_items/#{si.id}", {:action => "delete", :method => :delete}
+		%button
+			=link_to "Edit Item", "/sale_items/#{si.id}/edit" 
+		%button
+			=link_to "Buy It Now", "/sale_items/#{si.id}"
+		%br
+		%br

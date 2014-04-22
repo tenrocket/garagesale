@@ -1,0 +1,11 @@
+%h1= @purchased_item.name
+%h3= @purchased_item.price
+%br
+
+%h2= "Description:" 
+= @purchased_item.description
+
+%ul
+	-@purchased_item
+	%button
+		=link_to "Confirm Purchase", "/sale_items/#{@purchased_item.id}", {:action => "delete", :method => :delete}

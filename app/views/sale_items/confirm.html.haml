@@ -1,0 +1,142 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "content-type"}
+      %meta{:charset => "utf-8"}
+        %title Bootply.com - Bootstrap Basis Template for Bootstrap 3
+        %title http://bootstrapzero.com/bootstrap-template/basis
+        %meta{:content => "Bootply", :name => "generator"}/
+        %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
+          %link{:href => "//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css", :rel => "stylesheet"}
+            /[if lt IE 9]
+            %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
+            %link{:href => "http://www.bootply.com/bootstrap/img/favicon.ico", :rel => "shortcut icon"}
+              %link{:href => "http://www.bootply.com/bootstrap/img/apple-touch-icon.png", :rel => "apple-touch-icon"}
+                %link{:href => "http://www.bootply.com/bootstrap/img/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
+                  %link{:href => "http://www.bootply.com/bootstrap/img/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
+                    / CSS code from Bootply.com editor
+                    :css
+            /* move special fonts to HTML head for better performance */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700');
+
+/* custom template */
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+  %body
+  .wrapper
+    .box
+      .row
+        / sidebar
+        #sidebar.column.col-sm-3
+          %a.logo{:href => "#"} B
+          %ul.nav
+            %li.active
+              %a{:href => "#featured"} Featured
+            %li
+              %a{:href => "#stories"} Stories
+          %ul#sidebar-footer.nav.hidden-xs
+            %li
+              %a{:href => "http://www.bootply.com"}
+                %h3> Basis
+                Made with
+                %i.glyphicon.glyphicon-heart-empty
+                by Bootply
+        / /sidebar
+        / main
+        #main.column.col-sm-9
+          .padding
+            .full.col-sm-9
+              / content
+              #featured.col-sm-12
+                .page-header.text-muted
+                  Featured
+              / /top story
+              %ul
+                -@sale_items.each do |si|
+                  %h3 "Item Name: #{si.name}"
+                  %h4 "Price: #{si.price}"
+                  %button
+                    =link_to "Delete", "/sale_items/#{si.id}", {:action => "delete", :method => :delete}
+                  %button
+                    =link_to "Edit Item", "/sale_items/#{si.id}/edit" 
+                  %button
+                    =link_to "Buy It Now", "/sale_items/#{si.id}"
+                  %h5 "Description: #{si.description}"
+
+
+              .row
+                .col-sm-4.text-center
+                  %h4 Related 1
+                  %a{:href => "#"}
+                    %img.img-circle{:src => "//placehold.it/100"}/
+                .col-sm-4.text-center
+                  %h4 Related 2
+                  %a{:href => "#"}
+                    %img.img-circle{:src => "//placehold.it/100"}/
+                .col-sm-4.text-center
+                  %h4 Related 3
+                  %a{:href => "#"}
+                    %img.img-circle{:src => "//placehold.it/100"}/
+              .col-sm-12
+                .page-header.text-muted.divider
+                  Connect with Us
+              .row
+                .col-sm-6
+                  %a{:href => "#"} Twitter
+                  %small.text-muted |
+                  %a{:href => "#"} Facebook
+                  %small.text-muted |
+                  %a{:href => "#"} Google+
+              %hr
+                #footer.row
+                  .col-sm-6
+                  .col-sm-6
+                    %p
+                      %a.pull-right{:href => "#"} ©Copyright Inc.
+                %hr
+                  %h3.text-center
+                    %a{:href => "http://bootply.com/86704", :target => "ext"} Download this Template
+                  %hr
+            / /col-9
+          / /padding
+        / /main
+        
+        <!-- JavaScript jQuery code from Bootply.com editor  -->
+        
+        <script type='text/javascript'>
+        
+        $(document).ready(function() {
+        
+            
+        
+        });
+        
+        </script>
+        
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-40413119-1', 'bootply.com');
+          ga('send', 'pageview');
+        </script>
+        <!-- Quantcast Tag -->
+        <script type="text/javascript">
+        var _qevents = _qevents || [];
+        
+        (function() {
+        var elem = document.createElement('script');
+        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+        elem.async = true;
+        elem.type = "text/javascript";
+        var scpt = document.getElementsByTagName('script')[0];
+        scpt.parentNode.insertBefore(elem, scpt);
+        })();
+        
+        _qevents.push({
+        qacct:"p-0cXb7ATGU9nz5"
+        });
+        </script>
+    </body>
